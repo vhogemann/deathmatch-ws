@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+
+.grass {
+	background-image: url("../images/background.jpg");
+	background-repeat: repeat;	
+}
+
+.board {
+	width: 768px;
+	height: 768px;
+	background-image: url("../images/board.png")
+}
+
+.skeleton {
+	position: absolute;
+	background-image: url("../images/skeleton.png");
+	width: 96px;
+	height: 96px;
+}
+
+.fireball {
+	position: absolute;
+	background-image: url("../images/fireball.png");
+	width: 96px;
+	height: 96px;
+}
+.fireball.down { }
+.fireball.up { background-position: 0px 96px; }
+.fireball.left { background-position: 0px 288px; }
+.fireball.right { background-position: 0px 192px; }
+
+.dwarf {
+	position: absolute; 
+	background: url("../images/sprites.png");
+	width: 96px;
+	height: 96px;
+}
+.dwarf.olaf { background-position: -96px 0px; }
+.dwarf.olaf.down { }
+.dwarf.olaf.up { background-position: -96px -288px; }
+.dwarf.olaf.left { background-position: -96px -96px; }
+.dwarf.olaf.right { background-position: -96px -192px; }
+
+.dwarf.siegfried { background-position: 192px 384px; }
+.dwarf.siegfried.down { }
+.dwarf.siegfried.up { background-position: 192px 96px; }
+.dwarf.siegfried.left { background-position: 192px 288px; }
+.dwarf.siegfried.right { background-position: 192px 192px; }
+
+.dwarf.bjorn { background-position: -96px 384px; }
+.dwarf.bjorn.down { }
+.dwarf.bjorn.up { background-position: -96px 96px; }
+.dwarf.bjorn.left { background-position: -96px 288px; }
+.dwarf.bjorn.right { background-position: -96px 192px; }
+
+.dwarf.hagar { background-position: 480px 384px; }
+.dwarf.hagar.down { }
+.dwarf.hagar.up { background-position: 480px 96px; }
+.dwarf.hagar.left { background-position: 480px 288px; }
+.dwarf.hagar.right { background-position: 480px 196px; }

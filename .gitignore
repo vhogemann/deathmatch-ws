@@ -16,3 +16,4 @@ atlassian-ide-plugin.xml
 *.war
 *.ear
 /bin
+/build

@@ -16,8 +16,21 @@ class DeathmatchEndpoint {
 	
 	@PayloadRoot( localPart = "request", namespace = "http://deathmatch.ws/service" )
 	public DeathmatchResponse request( @RequestPayload DeathmatchRequest request ){		
-		def response = new DeathmatchResponse()
-		return response
-	}
 		
+		switch ( request.command ){
+			case CMD.INSERTCOIN :
+				return insertCoin();
+			case CMD.UP :
+				
+			case CMD.DOWN :
+			default :
+				break;
+		}
+		return null
+	}
+	
+	private DeathmatchResponse insertCoin(){
+						
+	}
+	
 }

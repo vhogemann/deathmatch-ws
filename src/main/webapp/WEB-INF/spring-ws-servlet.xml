@@ -10,6 +10,19 @@
 
 	<context:component-scan base-package="ws.deathmatch" />
 	<context:annotation-config />
-	<mvc:annotation-driven />
+	<sws:annotation-driven />
+
+	<sws:dynamic-wsdl id="soap" portTypeName="DeathmatchRequest"
+		locationUri="/service/deathmatch">
+		<sws:xsd location="/WEB-INF/schemas/deathmatch.xsd" />
+	</sws:dynamic-wsdl>
+
+	<sws:interceptors>
+		<bean
+			class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor">
+			<property name="logRequest" value="true" />
+			<property name="logResponse" value="true" />
+		</bean>
+	</sws:interceptors>
 
 </beans>

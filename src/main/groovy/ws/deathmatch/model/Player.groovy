@@ -1,15 +1,28 @@
 package ws.deathmatch.model
 
-class Player {
+abstract class Entity{
+	Direction direction
+	Position position
+}
+
+class Player extends Entity {
 	
 	int id
 	
-	Direction direction
+	String secret
 	
-	Position position
+	Status status = Status.ALIVE
 	
-	Status status
+	Player( int maxx, int maxy ){
+		position = Position.random( maxx, maxy)
+		direction = Direction.DOWN
+		secret = UUID.randomUUID().toString()
+	}
 
+}
+
+class Projectile extends Entity {
+	Player player
 }
 
 enum Direction {

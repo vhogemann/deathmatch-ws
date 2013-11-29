@@ -1,17 +1,22 @@
 angular.module('deathmatch',[ ])
 
-.factory('BoardAPI', function($http, PlayerService){
-	
+.factory('BoardAPI', function($http){
+	return {
+		base : '/deathmatch-ws/',
+		get : function(callback){
+			return $http.post(this.base + 'rest/board').success(callback);
+		}
+	}
 })
 
-.factory('PlayerService', function(){
+.factory('EntityService', function(){
 	
 	var name = [
-         'skeleton',  //0
          'olaf', 	  //1
          'siegfried', //2
          'bjorn',     //3
          'hagar',     //4
+         'skeleton',  //0
     ]
 	var board_size = 8;//x8
 	var tile_size = 96;//px
@@ -22,9 +27,21 @@ angular.module('deathmatch',[ ])
 	}
 	
 	return {
-		initPlayer : initPlayer( player )
+		init : function( id, position, direction ){
+			
+		},
+		update : funciton ( entity ){
+			
+		}
 	}
 })
-.controller('BoardCtrl',function( $scope, $timeout, BoardAPI ){
+.controller('BoardCtrl',function( $scope, $timeout, BoardAPI, EntityService ){
 	
+	$scope.entities = [];
+	
+	var tick = function(){
+		
+	}	
+	
+	$timeout(tick, 1000); 
 });

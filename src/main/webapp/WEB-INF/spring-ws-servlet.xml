@@ -12,8 +12,8 @@
 	<context:annotation-config />
 	<sws:annotation-driven />
 
-	<sws:dynamic-wsdl id="soap" portTypeName="DeathmatchRequest"
-		locationUri="/service/deathmatch">
+	<sws:dynamic-wsdl id="deathmatch" portTypeName="DeathmatchRequest"
+		locationUri="/soap/service/">
 		<sws:xsd location="/WEB-INF/schemas/deathmatch.xsd" />
 	</sws:dynamic-wsdl>
 

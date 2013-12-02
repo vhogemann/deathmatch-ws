@@ -51,6 +51,6 @@
 		</sequence>
 	</complexType>
 
-	<element name="request" type="tns:DeathmatchRequest"></element>
+	<element name="DeathmatchRequest" type="tns:DeathmatchRequest"></element>
 
 </schema>

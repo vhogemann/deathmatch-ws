@@ -15,10 +15,8 @@
     <![endif]-->
 </head>
 <body class="grass" ng-app="deathmatch">
-	<h1>Deathmatch Sprites</h1>
-
 	<div class="board" ng-controller="BoardCtrl">
-		<div class="entity.class()" ng-repeat="entity in entities"></div>
+		<div ng-class="getClass()" ng-repeat="entity in entities" player="entity" style="{{getPosition()}}"></div>
 	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

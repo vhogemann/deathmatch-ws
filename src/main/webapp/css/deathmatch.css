@@ -1,14 +1,15 @@
 @CHARSET "UTF-8";
 
 .grass {
-	background-image: url("../images/background.jpg");
+	background: url("../images/background.jpg");
 	background-repeat: repeat;	
 }
 
 .board {
 	width: 768px;
 	height: 768px;
-	background-image: url("../images/board.png")
+	background-image: url("../images/board.png");
+	position: absolute;
 }
 
 .skeleton {

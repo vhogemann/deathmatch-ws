@@ -49,7 +49,7 @@ class Board {
 	}
 	
 	void turn(int id, Direction direction){
-		players.get(0).direction = direction
+		players.get(id).direction = direction
 	}
 	
 }

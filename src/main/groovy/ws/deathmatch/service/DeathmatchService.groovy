@@ -6,7 +6,7 @@ import ws.deathmatch.model.Board
 import ws.deathmatch.model.Direction
 import ws.deathmatch.model.Player
 
-@Service
+
 class DeathmatchService {
 
 	private Board board = new Board()		
@@ -29,6 +29,4 @@ class DeathmatchService {
 	Player insertCoin( ){
 		return board.newPlayer()
 	}
-	
-	
 }

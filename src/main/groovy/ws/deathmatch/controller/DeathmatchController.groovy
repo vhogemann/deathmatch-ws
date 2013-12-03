@@ -15,18 +15,18 @@ import ws.deathmatch.service.DeathmatchService
 class DeathmatchController {
 	
 	@Autowired
-	private DeathmatchService deathmatchService
+	private DeathmatchService service
 	
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	@ResponseBody
 	Board getBoard(){
-		return deathmatchService.board
+		return service.board
 	}
 	
 	@RequestMapping( value = "/board", method = RequestMethod.PUT )
 	@ResponseBody
 	Board updateBoard( @RequestBody KillCommand body ){
-		return deathmatchService.kill( body.playerId )
+		return service.kill( body.playerId )
 	}
 	
 	

@@ -9,15 +9,22 @@ angular.module('deathmatch',[])
 	}
 })
 
-.directive('player',function(){
+.directive('entity',function(){
 	return {
 		restriction : 'A',
 		scope : {
-			player : '='
+			entity : '=',
+			fireball : '@'
 		},
 		controller : function($scope, $element){
-						
+
 			$scope.getClass = function(){
+
+                var direction = $scope.entity.direction.toLowerCase();
+
+                if( $scope.fireball )
+                    return 'fireball ' + direction;
+
 				var name = [
 				            'olaf', 	 //0
 				            'siegfried', //1
@@ -25,18 +32,17 @@ angular.module('deathmatch',[])
 				            'hagar'      //3
 				       ]
 				
-				var status = $scope.player.status == "ALIVE" ? "dwarf" : "skeleton";
-				var name = name[$scope.player.id % 4];
-				var direction = $scope.player.direction.toLowerCase();
+				var status = $scope.entity.status == "ALIVE" ? "dwarf" : "skeleton";
+				var name = name[$scope.entity.id % 4];
 				
 				return status + " " + name + " " + direction;
 			}
 			
 			$scope.getPosition = function(){
 				var resolution = 96;
-				
-				var top = $scope.player.position.y * resolution;
-				var left = $scope.player.position.x * resolution;
+
+				var top = $scope.entity.position.y * resolution;
+				var left = $scope.entity.position.x * resolution;
 				
 				return " left: " + left + "px; top: " + top + "px;";
 				
@@ -52,6 +58,12 @@ angular.module('deathmatch',[])
 		console.log('tick');
 		BoardAPI.get(function(data){
 			$scope.entities = data.players;
+			$scope.fireballs = [];
+			angular.forEach( $scope.entities, function( entity ){
+                if(entity.projectile){
+                    $scope.fireballs.push(entity.projectile);
+                }
+			});
 			$timeout(tick, 1000);
 		});
 	}	

@@ -22,11 +22,15 @@ class DeathmatchService {
 	}
 	
 	Board shoot( int id ){
-		//TODO
-		return null
+        board.shoot(id)
+		return board
 	}
 		
 	Player insertCoin( ){
 		return board.newPlayer()
 	}
+
+    Board tick() {
+        return board
+    }
 }

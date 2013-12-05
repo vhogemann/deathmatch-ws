@@ -4,6 +4,9 @@ apply plugin: 'war'
 apply plugin: 'jetty'
 apply plugin: 'eclipse-wtp'
 
+[jettyRun, jettyRunWar,jettyStop]*.stopPort = 8081
+[jettyRun, jettyRunWar,jettyStop]*.stopKey = 'stopKey'
+
 repositories {
 	mavenCentral()
 }
@@ -20,3 +23,4 @@ dependencies {
 	testCompile 'junit:junit:4.11'
 	testCompile 'org.springframework:spring-test:3.2.2.RELEASE'
 }
+

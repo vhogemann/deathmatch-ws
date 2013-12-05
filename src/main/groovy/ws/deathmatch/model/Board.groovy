@@ -4,8 +4,8 @@ import java.util.List
 
 class Board {
 	
-	int width = 8
-	int height = 8
+	int width = 7
+	int height = 7
 	
 	List<Player> players = [ ]
 	
@@ -23,33 +23,19 @@ class Board {
 	}
 	
 	void move(int id){
-		Player player = players[id]
-		
-		int x = player.position.x
-		int y = player.position.y
-		 
-		switch( player.direction ){
-			case Direction.UP :
-				if( y > 0 ) y--; break;
-		    case Direction.DOWN :
-				if( y < width ) y++; break;
-			case Direction.RIGHT :
-				if( x < width ) x++; break;
-			case Direction.LEFT :
-				if( x > 0 ) x--; break;
-		}
-		
-		player.position.x = x
-		player.position.y = y
-			
+        players.get(id).move()
 	}
 	
 	void shoot(int id){
-		
+		players.get(id).shoot()
 	}
-	
+
 	void turn(int id, Direction direction){
 		players.get(id).direction = direction
 	}
+
+    void tick(){
+        players.each{ it.tick() }
+    }
 	
 }

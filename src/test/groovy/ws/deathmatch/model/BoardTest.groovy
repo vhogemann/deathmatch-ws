@@ -29,7 +29,7 @@ class BoardTest {
 		Board board = new Board()
 		Player player = board.newPlayer()
 		
-		player.position = new Position(0, 0)
+		player.position = new Position(0, 0, 8, 8)
 		
 		board.move(0)
 		

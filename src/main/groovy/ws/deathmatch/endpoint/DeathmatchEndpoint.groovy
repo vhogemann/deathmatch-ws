@@ -37,6 +37,9 @@ class DeathmatchEndpoint {
 				return turn( request.player, Direction.RIGHT )
 			case CMD.WALK:
 				return move( request.player )
+            case CMD.SHOOT:
+                return shoot( request.player )
+
 			
 		}
 		return null
@@ -54,7 +57,11 @@ class DeathmatchEndpoint {
 		Player player = service.insertCoin()
 		return toResponse( service.board )
 	}
-	
+
+    private DeathmatchResponse shoot( int id ){
+        return toResponse( service.shoot(id) )
+    }
+
 	private DeathmatchResponse toResponse ( Board board ){
 		DeathmatchResponse response = new DeathmatchResponse()
 		response.player = board.players.collect { player ->

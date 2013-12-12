@@ -20,7 +20,6 @@ class DeathmatchController {
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	@ResponseBody
 	Board getBoard(){
-        service.board.tick()
 		return service.board
 	}
 	
